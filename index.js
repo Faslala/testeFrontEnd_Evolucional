@@ -56,31 +56,31 @@
 // }
 
 
-function CreateJSONArray() {
-    var total_rows = 300;
-    var arr = []
-    for (var i = 0; i < total_rows; i++) {
-        arr.push({
-            'id': i +1,
-            'first_name': chance.first(),
-            'degreeID': chance.integer({ min: 1, max: 13 }),
-            'classID': chance.integer({ min: 1, max: 6 })
-        })
-    };
-    return arr;
-}
+// function CreateJSONArray() {
+//     var total_rows = 300;
+//     var arr = []
+//     for (var i = 0; i < total_rows; i++) {
+//         arr.push({
+//             'id': i +1,
+//             'first_name': chance.first(),
+//             'degreeID': chance.integer({ min: 1, max: 13 }),
+//             'classID': chance.integer({ min: 1, max: 6 })
+//         })
+//     };
+//     return arr;
+// }
 
 
-document.getElementById('btn-3').onclick = function(event) {
-    event.preventDefault();
-    var data = CreateJSONArray()
-    var tbl = js.CreateTable(data)
-    console.log(data)
+// document.getElementById('btn-3').onclick = function(event) {
+//     event.preventDefault();
+//     var data = CreateJSONArray()
+//     var tbl = js.CreateTable(data)
+//     console.log(data)
 
- }
+//  }
 
- var myDropdown = document.getElementById('myDropdown')
- myDropdown.addEventListener('show.bs.dropdown', function () {
+//  var myDropdown = document.getElementById('myDropdown')
+//  myDropdown.addEventListener('show.bs.dropdown', function () {
    // do something...
  })
 
