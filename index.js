@@ -1,3 +1,19 @@
+let degrees;
+let httpRequest = new XMLHttpRequest(); 
+httpRequest.open("GET", "degrees.json", true);
+httpRequest.send();
+httpRequest.addEventListener("readystatechange", function() {
+    if (this.readyState === this.DONE) {
+        degrees = JSON.parse(this.response);
+        for (i = 0; i < degrees.length; i++) {
+          console.log(degrees[i].name)
+
+        } 
+    }
+});
+
+
+
 // var degrees = document.getElementById('btn1')
 // var classes = document.getElementById('btn2')
 // var option = document.createElement('option')
@@ -82,7 +98,7 @@
 //  var myDropdown = document.getElementById('myDropdown')
 //  myDropdown.addEventListener('show.bs.dropdown', function () {
    // do something...
- })
+//  })
 
 //  document.getElementById('createtable').onclick = function(event) {
 
@@ -95,9 +111,3 @@
 
 //     $('.MyTable').html(tbl);
 // });
-
-
-
-
-
-
