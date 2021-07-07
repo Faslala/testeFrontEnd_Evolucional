@@ -1,6 +1,18 @@
 "use strict";
 
-// var degrees = document.getElementById('btn1')
+var degrees;
+var httpRequest = new XMLHttpRequest();
+httpRequest.open("GET", "degrees.json", true);
+httpRequest.send();
+httpRequest.addEventListener("readystatechange", function () {
+  if (this.readyState === this.DONE) {
+    degrees = JSON.parse(this.response);
+
+    for (i = 0; i < degrees.length; i++) {
+      console.log(degrees[i].name);
+    }
+  }
+}); // var degrees = document.getElementById('btn1')
 // var classes = document.getElementById('btn2')
 // var option = document.createElement('option')
 // data_degrees = getJSON('degrees.json')
@@ -45,39 +57,30 @@
 //         })
 //     })
 // }
-function CreateJSONArray() {
-  var total_rows = 300;
-  var arr = [];
-
-  for (var i = 0; i < total_rows; i++) {
-    arr.push({
-      'id': i + 1,
-      'first_name': chance.first(),
-      'degreeID': chance.integer({
-        min: 1,
-        max: 13
-      }),
-      'classID': chance.integer({
-        min: 1,
-        max: 6
-      })
-    });
-  }
-
-  ;
-  return arr;
-}
-
-document.getElementById('btn-3').onclick = function (event) {
-  event.preventDefault();
-  var data = CreateJSONArray();
-  var tbl = js.CreateTable(data);
-  console.log(data);
-};
-
-var myDropdown = document.getElementById('myDropdown');
-myDropdown.addEventListener('show.bs.dropdown', function () {// do something...
-}); //  document.getElementById('createtable').onclick = function(event) {
+// function CreateJSONArray() {
+//     var total_rows = 300;
+//     var arr = []
+//     for (var i = 0; i < total_rows; i++) {
+//         arr.push({
+//             'id': i +1,
+//             'first_name': chance.first(),
+//             'degreeID': chance.integer({ min: 1, max: 13 }),
+//             'classID': chance.integer({ min: 1, max: 6 })
+//         })
+//     };
+//     return arr;
+// }
+// document.getElementById('btn-3').onclick = function(event) {
+//     event.preventDefault();
+//     var data = CreateJSONArray()
+//     var tbl = js.CreateTable(data)
+//     console.log(data)
+//  }
+//  var myDropdown = document.getElementById('myDropdown')
+//  myDropdown.addEventListener('show.bs.dropdown', function () {
+// do something...
+//  })
+//  document.getElementById('createtable').onclick = function(event) {
 //  }
 // $(document).on('click', '.CreateMyTable', function(event) {
 //     event.preventDefault();
